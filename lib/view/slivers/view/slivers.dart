@@ -28,7 +28,6 @@ class _SliversState extends State<Slivers> {
       body: Scaffold(
         body: CustomScrollView(
           slivers: [
-            textSliverToBoxAdapter(context),
             SliverListCard(items: _items),
             SliverGrid(
               gridDelegate: HomePageGridDelegate(),
@@ -66,20 +65,6 @@ class _SliversState extends State<Slivers> {
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  SliverToBoxAdapter textSliverToBoxAdapter(BuildContext context) {
-    return SliverToBoxAdapter(
-      child: Text(
-        "Rick And Morty",
-        style: Theme.of(context)
-            .textTheme
-            .headline4!
-            .copyWith(fontWeight: FontWeight.bold)
-            .copyWith(color: Colors.teal),
-        textAlign: TextAlign.center,
       ),
     );
   }
